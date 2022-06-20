@@ -12,38 +12,11 @@ part of 'package_score_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PackageScore _$PackageScoreFromJson(Map<String, dynamic> json) {
   return _PackageScore.fromJson(json);
 }
-
-/// @nodoc
-class _$PackageScoreTearOff {
-  const _$PackageScoreTearOff();
-
-  _PackageScore call(
-      {required int? grantedPoints,
-      required int? maxPoints,
-      required int likeCount,
-      required double? popularityScore,
-      required DateTime lastUpdated}) {
-    return _PackageScore(
-      grantedPoints: grantedPoints,
-      maxPoints: maxPoints,
-      likeCount: likeCount,
-      popularityScore: popularityScore,
-      lastUpdated: lastUpdated,
-    );
-  }
-
-  PackageScore fromJson(Map<String, Object?> json) {
-    return PackageScore.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PackageScore = _$PackageScoreTearOff();
 
 /// @nodoc
 mixin _$PackageScore {
@@ -114,11 +87,11 @@ class _$PackageScoreCopyWithImpl<$Res> implements $PackageScoreCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$PackageScoreCopyWith<$Res>
+abstract class _$$_PackageScoreCopyWith<$Res>
     implements $PackageScoreCopyWith<$Res> {
-  factory _$PackageScoreCopyWith(
-          _PackageScore value, $Res Function(_PackageScore) then) =
-      __$PackageScoreCopyWithImpl<$Res>;
+  factory _$$_PackageScoreCopyWith(
+          _$_PackageScore value, $Res Function(_$_PackageScore) then) =
+      __$$_PackageScoreCopyWithImpl<$Res>;
   @override
   $Res call(
       {int? grantedPoints,
@@ -129,14 +102,15 @@ abstract class _$PackageScoreCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PackageScoreCopyWithImpl<$Res> extends _$PackageScoreCopyWithImpl<$Res>
-    implements _$PackageScoreCopyWith<$Res> {
-  __$PackageScoreCopyWithImpl(
-      _PackageScore _value, $Res Function(_PackageScore) _then)
-      : super(_value, (v) => _then(v as _PackageScore));
+class __$$_PackageScoreCopyWithImpl<$Res>
+    extends _$PackageScoreCopyWithImpl<$Res>
+    implements _$$_PackageScoreCopyWith<$Res> {
+  __$$_PackageScoreCopyWithImpl(
+      _$_PackageScore _value, $Res Function(_$_PackageScore) _then)
+      : super(_value, (v) => _then(v as _$_PackageScore));
 
   @override
-  _PackageScore get _value => super._value as _PackageScore;
+  _$_PackageScore get _value => super._value as _$_PackageScore;
 
   @override
   $Res call({
@@ -146,7 +120,7 @@ class __$PackageScoreCopyWithImpl<$Res> extends _$PackageScoreCopyWithImpl<$Res>
     Object? popularityScore = freezed,
     Object? lastUpdated = freezed,
   }) {
-    return _then(_PackageScore(
+    return _then(_$_PackageScore(
       grantedPoints: grantedPoints == freezed
           ? _value.grantedPoints
           : grantedPoints // ignore: cast_nullable_to_non_nullable
@@ -204,7 +178,7 @@ class _$_PackageScore implements _PackageScore {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackageScore &&
+            other is _$_PackageScore &&
             const DeepCollectionEquality()
                 .equals(other.grantedPoints, grantedPoints) &&
             const DeepCollectionEquality().equals(other.maxPoints, maxPoints) &&
@@ -215,6 +189,7 @@ class _$_PackageScore implements _PackageScore {
                 .equals(other.lastUpdated, lastUpdated));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -226,8 +201,8 @@ class _$_PackageScore implements _PackageScore {
 
   @JsonKey(ignore: true)
   @override
-  _$PackageScoreCopyWith<_PackageScore> get copyWith =>
-      __$PackageScoreCopyWithImpl<_PackageScore>(this, _$identity);
+  _$$_PackageScoreCopyWith<_$_PackageScore> get copyWith =>
+      __$$_PackageScoreCopyWithImpl<_$_PackageScore>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -237,69 +212,34 @@ class _$_PackageScore implements _PackageScore {
 
 abstract class _PackageScore implements PackageScore {
   factory _PackageScore(
-      {required int? grantedPoints,
-      required int? maxPoints,
-      required int likeCount,
-      required double? popularityScore,
-      required DateTime lastUpdated}) = _$_PackageScore;
+      {required final int? grantedPoints,
+      required final int? maxPoints,
+      required final int likeCount,
+      required final double? popularityScore,
+      required final DateTime lastUpdated}) = _$_PackageScore;
 
   factory _PackageScore.fromJson(Map<String, dynamic> json) =
       _$_PackageScore.fromJson;
 
   @override
-  int? get grantedPoints;
+  int? get grantedPoints => throw _privateConstructorUsedError;
   @override
-  int? get maxPoints;
+  int? get maxPoints => throw _privateConstructorUsedError;
   @override
-  int get likeCount;
+  int get likeCount => throw _privateConstructorUsedError;
   @override
-  double? get popularityScore;
+  double? get popularityScore => throw _privateConstructorUsedError;
   @override
-  DateTime get lastUpdated;
+  DateTime get lastUpdated => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PackageScoreCopyWith<_PackageScore> get copyWith =>
+  _$$_PackageScoreCopyWith<_$_PackageScore> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 PackageScoreCard _$PackageScoreCardFromJson(Map<String, dynamic> json) {
   return _PackageScoreCard.fromJson(json);
 }
-
-/// @nodoc
-class _$PackageScoreCardTearOff {
-  const _$PackageScoreCardTearOff();
-
-  _PackageScoreCard call(
-      {required String packageName,
-      required String packageVersion,
-      required String runtimeVersion,
-      required DateTime updated,
-      required DateTime packageCreated,
-      required DateTime packageVersionCreated,
-      List<String> derivedTags = const [],
-      List<String> flags = const [],
-      List<String> reportTypes = const []}) {
-    return _PackageScoreCard(
-      packageName: packageName,
-      packageVersion: packageVersion,
-      runtimeVersion: runtimeVersion,
-      updated: updated,
-      packageCreated: packageCreated,
-      packageVersionCreated: packageVersionCreated,
-      derivedTags: derivedTags,
-      flags: flags,
-      reportTypes: reportTypes,
-    );
-  }
-
-  PackageScoreCard fromJson(Map<String, Object?> json) {
-    return PackageScoreCard.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PackageScoreCard = _$PackageScoreCardTearOff();
 
 /// @nodoc
 mixin _$PackageScoreCard {
@@ -399,11 +339,11 @@ class _$PackageScoreCardCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PackageScoreCardCopyWith<$Res>
+abstract class _$$_PackageScoreCardCopyWith<$Res>
     implements $PackageScoreCardCopyWith<$Res> {
-  factory _$PackageScoreCardCopyWith(
-          _PackageScoreCard value, $Res Function(_PackageScoreCard) then) =
-      __$PackageScoreCardCopyWithImpl<$Res>;
+  factory _$$_PackageScoreCardCopyWith(
+          _$_PackageScoreCard value, $Res Function(_$_PackageScoreCard) then) =
+      __$$_PackageScoreCardCopyWithImpl<$Res>;
   @override
   $Res call(
       {String packageName,
@@ -418,15 +358,15 @@ abstract class _$PackageScoreCardCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PackageScoreCardCopyWithImpl<$Res>
+class __$$_PackageScoreCardCopyWithImpl<$Res>
     extends _$PackageScoreCardCopyWithImpl<$Res>
-    implements _$PackageScoreCardCopyWith<$Res> {
-  __$PackageScoreCardCopyWithImpl(
-      _PackageScoreCard _value, $Res Function(_PackageScoreCard) _then)
-      : super(_value, (v) => _then(v as _PackageScoreCard));
+    implements _$$_PackageScoreCardCopyWith<$Res> {
+  __$$_PackageScoreCardCopyWithImpl(
+      _$_PackageScoreCard _value, $Res Function(_$_PackageScoreCard) _then)
+      : super(_value, (v) => _then(v as _$_PackageScoreCard));
 
   @override
-  _PackageScoreCard get _value => super._value as _PackageScoreCard;
+  _$_PackageScoreCard get _value => super._value as _$_PackageScoreCard;
 
   @override
   $Res call({
@@ -440,7 +380,7 @@ class __$PackageScoreCardCopyWithImpl<$Res>
     Object? flags = freezed,
     Object? reportTypes = freezed,
   }) {
-    return _then(_PackageScoreCard(
+    return _then(_$_PackageScoreCard(
       packageName: packageName == freezed
           ? _value.packageName
           : packageName // ignore: cast_nullable_to_non_nullable
@@ -466,15 +406,15 @@ class __$PackageScoreCardCopyWithImpl<$Res>
           : packageVersionCreated // ignore: cast_nullable_to_non_nullable
               as DateTime,
       derivedTags: derivedTags == freezed
-          ? _value.derivedTags
+          ? _value._derivedTags
           : derivedTags // ignore: cast_nullable_to_non_nullable
               as List<String>,
       flags: flags == freezed
-          ? _value.flags
+          ? _value._flags
           : flags // ignore: cast_nullable_to_non_nullable
               as List<String>,
       reportTypes: reportTypes == freezed
-          ? _value.reportTypes
+          ? _value._reportTypes
           : reportTypes // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -491,9 +431,12 @@ class _$_PackageScoreCard implements _PackageScoreCard {
       required this.updated,
       required this.packageCreated,
       required this.packageVersionCreated,
-      this.derivedTags = const [],
-      this.flags = const [],
-      this.reportTypes = const []});
+      final List<String> derivedTags = const [],
+      final List<String> flags = const [],
+      final List<String> reportTypes = const []})
+      : _derivedTags = derivedTags,
+        _flags = flags,
+        _reportTypes = reportTypes;
 
   factory _$_PackageScoreCard.fromJson(Map<String, dynamic> json) =>
       _$$_PackageScoreCardFromJson(json);
@@ -510,15 +453,29 @@ class _$_PackageScoreCard implements _PackageScoreCard {
   final DateTime packageCreated;
   @override
   final DateTime packageVersionCreated;
-  @JsonKey()
+  final List<String> _derivedTags;
   @override
-  final List<String> derivedTags;
   @JsonKey()
+  List<String> get derivedTags {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_derivedTags);
+  }
+
+  final List<String> _flags;
   @override
-  final List<String> flags;
   @JsonKey()
+  List<String> get flags {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_flags);
+  }
+
+  final List<String> _reportTypes;
   @override
-  final List<String> reportTypes;
+  @JsonKey()
+  List<String> get reportTypes {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_reportTypes);
+  }
 
   @override
   String toString() {
@@ -529,7 +486,7 @@ class _$_PackageScoreCard implements _PackageScoreCard {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackageScoreCard &&
+            other is _$_PackageScoreCard &&
             const DeepCollectionEquality()
                 .equals(other.packageName, packageName) &&
             const DeepCollectionEquality()
@@ -542,12 +499,13 @@ class _$_PackageScoreCard implements _PackageScoreCard {
             const DeepCollectionEquality()
                 .equals(other.packageVersionCreated, packageVersionCreated) &&
             const DeepCollectionEquality()
-                .equals(other.derivedTags, derivedTags) &&
-            const DeepCollectionEquality().equals(other.flags, flags) &&
+                .equals(other._derivedTags, _derivedTags) &&
+            const DeepCollectionEquality().equals(other._flags, _flags) &&
             const DeepCollectionEquality()
-                .equals(other.reportTypes, reportTypes));
+                .equals(other._reportTypes, _reportTypes));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -557,14 +515,14 @@ class _$_PackageScoreCard implements _PackageScoreCard {
       const DeepCollectionEquality().hash(updated),
       const DeepCollectionEquality().hash(packageCreated),
       const DeepCollectionEquality().hash(packageVersionCreated),
-      const DeepCollectionEquality().hash(derivedTags),
-      const DeepCollectionEquality().hash(flags),
-      const DeepCollectionEquality().hash(reportTypes));
+      const DeepCollectionEquality().hash(_derivedTags),
+      const DeepCollectionEquality().hash(_flags),
+      const DeepCollectionEquality().hash(_reportTypes));
 
   @JsonKey(ignore: true)
   @override
-  _$PackageScoreCardCopyWith<_PackageScoreCard> get copyWith =>
-      __$PackageScoreCardCopyWithImpl<_PackageScoreCard>(this, _$identity);
+  _$$_PackageScoreCardCopyWith<_$_PackageScoreCard> get copyWith =>
+      __$$_PackageScoreCardCopyWithImpl<_$_PackageScoreCard>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -574,39 +532,39 @@ class _$_PackageScoreCard implements _PackageScoreCard {
 
 abstract class _PackageScoreCard implements PackageScoreCard {
   factory _PackageScoreCard(
-      {required String packageName,
-      required String packageVersion,
-      required String runtimeVersion,
-      required DateTime updated,
-      required DateTime packageCreated,
-      required DateTime packageVersionCreated,
-      List<String> derivedTags,
-      List<String> flags,
-      List<String> reportTypes}) = _$_PackageScoreCard;
+      {required final String packageName,
+      required final String packageVersion,
+      required final String runtimeVersion,
+      required final DateTime updated,
+      required final DateTime packageCreated,
+      required final DateTime packageVersionCreated,
+      final List<String> derivedTags,
+      final List<String> flags,
+      final List<String> reportTypes}) = _$_PackageScoreCard;
 
   factory _PackageScoreCard.fromJson(Map<String, dynamic> json) =
       _$_PackageScoreCard.fromJson;
 
   @override
-  String get packageName;
+  String get packageName => throw _privateConstructorUsedError;
   @override
-  String get packageVersion;
+  String get packageVersion => throw _privateConstructorUsedError;
   @override
-  String get runtimeVersion;
+  String get runtimeVersion => throw _privateConstructorUsedError;
   @override
-  DateTime get updated;
+  DateTime get updated => throw _privateConstructorUsedError;
   @override
-  DateTime get packageCreated;
+  DateTime get packageCreated => throw _privateConstructorUsedError;
   @override
-  DateTime get packageVersionCreated;
+  DateTime get packageVersionCreated => throw _privateConstructorUsedError;
   @override
-  List<String> get derivedTags;
+  List<String> get derivedTags => throw _privateConstructorUsedError;
   @override
-  List<String> get flags;
+  List<String> get flags => throw _privateConstructorUsedError;
   @override
-  List<String> get reportTypes;
+  List<String> get reportTypes => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PackageScoreCardCopyWith<_PackageScoreCard> get copyWith =>
+  _$$_PackageScoreCardCopyWith<_$_PackageScoreCard> get copyWith =>
       throw _privateConstructorUsedError;
 }

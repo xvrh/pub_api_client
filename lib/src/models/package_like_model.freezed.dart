@@ -12,32 +12,11 @@ part of 'package_like_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PackageLike _$PackageLikeFromJson(Map<String, dynamic> json) {
   return _PackageLike.fromJson(json);
 }
-
-/// @nodoc
-class _$PackageLikeTearOff {
-  const _$PackageLikeTearOff();
-
-  _PackageLike call(
-      {required String package, required bool liked, DateTime? created}) {
-    return _PackageLike(
-      package: package,
-      liked: liked,
-      created: created,
-    );
-  }
-
-  PackageLike fromJson(Map<String, Object?> json) {
-    return PackageLike.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PackageLike = _$PackageLikeTearOff();
 
 /// @nodoc
 mixin _$PackageLike {
@@ -91,24 +70,24 @@ class _$PackageLikeCopyWithImpl<$Res> implements $PackageLikeCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$PackageLikeCopyWith<$Res>
+abstract class _$$_PackageLikeCopyWith<$Res>
     implements $PackageLikeCopyWith<$Res> {
-  factory _$PackageLikeCopyWith(
-          _PackageLike value, $Res Function(_PackageLike) then) =
-      __$PackageLikeCopyWithImpl<$Res>;
+  factory _$$_PackageLikeCopyWith(
+          _$_PackageLike value, $Res Function(_$_PackageLike) then) =
+      __$$_PackageLikeCopyWithImpl<$Res>;
   @override
   $Res call({String package, bool liked, DateTime? created});
 }
 
 /// @nodoc
-class __$PackageLikeCopyWithImpl<$Res> extends _$PackageLikeCopyWithImpl<$Res>
-    implements _$PackageLikeCopyWith<$Res> {
-  __$PackageLikeCopyWithImpl(
-      _PackageLike _value, $Res Function(_PackageLike) _then)
-      : super(_value, (v) => _then(v as _PackageLike));
+class __$$_PackageLikeCopyWithImpl<$Res> extends _$PackageLikeCopyWithImpl<$Res>
+    implements _$$_PackageLikeCopyWith<$Res> {
+  __$$_PackageLikeCopyWithImpl(
+      _$_PackageLike _value, $Res Function(_$_PackageLike) _then)
+      : super(_value, (v) => _then(v as _$_PackageLike));
 
   @override
-  _PackageLike get _value => super._value as _PackageLike;
+  _$_PackageLike get _value => super._value as _$_PackageLike;
 
   @override
   $Res call({
@@ -116,7 +95,7 @@ class __$PackageLikeCopyWithImpl<$Res> extends _$PackageLikeCopyWithImpl<$Res>
     Object? liked = freezed,
     Object? created = freezed,
   }) {
-    return _then(_PackageLike(
+    return _then(_$_PackageLike(
       package: package == freezed
           ? _value.package
           : package // ignore: cast_nullable_to_non_nullable
@@ -158,12 +137,13 @@ class _$_PackageLike implements _PackageLike {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackageLike &&
+            other is _$_PackageLike &&
             const DeepCollectionEquality().equals(other.package, package) &&
             const DeepCollectionEquality().equals(other.liked, liked) &&
             const DeepCollectionEquality().equals(other.created, created));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -173,8 +153,8 @@ class _$_PackageLike implements _PackageLike {
 
   @JsonKey(ignore: true)
   @override
-  _$PackageLikeCopyWith<_PackageLike> get copyWith =>
-      __$PackageLikeCopyWithImpl<_PackageLike>(this, _$identity);
+  _$$_PackageLikeCopyWith<_$_PackageLike> get copyWith =>
+      __$$_PackageLikeCopyWithImpl<_$_PackageLike>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -184,21 +164,21 @@ class _$_PackageLike implements _PackageLike {
 
 abstract class _PackageLike implements PackageLike {
   const factory _PackageLike(
-      {required String package,
-      required bool liked,
-      DateTime? created}) = _$_PackageLike;
+      {required final String package,
+      required final bool liked,
+      final DateTime? created}) = _$_PackageLike;
 
   factory _PackageLike.fromJson(Map<String, dynamic> json) =
       _$_PackageLike.fromJson;
 
   @override
-  String get package;
+  String get package => throw _privateConstructorUsedError;
   @override
-  bool get liked;
+  bool get liked => throw _privateConstructorUsedError;
   @override
-  DateTime? get created;
+  DateTime? get created => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PackageLikeCopyWith<_PackageLike> get copyWith =>
+  _$$_PackageLikeCopyWith<_$_PackageLike> get copyWith =>
       throw _privateConstructorUsedError;
 }

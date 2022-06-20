@@ -12,29 +12,11 @@ part of 'package_publisher_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PackagePublisher _$PackagePublisherFromJson(Map<String, dynamic> json) {
   return _PackagePublisher.fromJson(json);
 }
-
-/// @nodoc
-class _$PackagePublisherTearOff {
-  const _$PackagePublisherTearOff();
-
-  _PackagePublisher call({required String? publisherId}) {
-    return _PackagePublisher(
-      publisherId: publisherId,
-    );
-  }
-
-  PackagePublisher fromJson(Map<String, Object?> json) {
-    return PackagePublisher.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PackagePublisher = _$PackagePublisherTearOff();
 
 /// @nodoc
 mixin _$PackagePublisher {
@@ -77,31 +59,31 @@ class _$PackagePublisherCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PackagePublisherCopyWith<$Res>
+abstract class _$$_PackagePublisherCopyWith<$Res>
     implements $PackagePublisherCopyWith<$Res> {
-  factory _$PackagePublisherCopyWith(
-          _PackagePublisher value, $Res Function(_PackagePublisher) then) =
-      __$PackagePublisherCopyWithImpl<$Res>;
+  factory _$$_PackagePublisherCopyWith(
+          _$_PackagePublisher value, $Res Function(_$_PackagePublisher) then) =
+      __$$_PackagePublisherCopyWithImpl<$Res>;
   @override
   $Res call({String? publisherId});
 }
 
 /// @nodoc
-class __$PackagePublisherCopyWithImpl<$Res>
+class __$$_PackagePublisherCopyWithImpl<$Res>
     extends _$PackagePublisherCopyWithImpl<$Res>
-    implements _$PackagePublisherCopyWith<$Res> {
-  __$PackagePublisherCopyWithImpl(
-      _PackagePublisher _value, $Res Function(_PackagePublisher) _then)
-      : super(_value, (v) => _then(v as _PackagePublisher));
+    implements _$$_PackagePublisherCopyWith<$Res> {
+  __$$_PackagePublisherCopyWithImpl(
+      _$_PackagePublisher _value, $Res Function(_$_PackagePublisher) _then)
+      : super(_value, (v) => _then(v as _$_PackagePublisher));
 
   @override
-  _PackagePublisher get _value => super._value as _PackagePublisher;
+  _$_PackagePublisher get _value => super._value as _$_PackagePublisher;
 
   @override
   $Res call({
     Object? publisherId = freezed,
   }) {
-    return _then(_PackagePublisher(
+    return _then(_$_PackagePublisher(
       publisherId: publisherId == freezed
           ? _value.publisherId
           : publisherId // ignore: cast_nullable_to_non_nullable
@@ -130,19 +112,20 @@ class _$_PackagePublisher implements _PackagePublisher {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackagePublisher &&
+            other is _$_PackagePublisher &&
             const DeepCollectionEquality()
                 .equals(other.publisherId, publisherId));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(publisherId));
 
   @JsonKey(ignore: true)
   @override
-  _$PackagePublisherCopyWith<_PackagePublisher> get copyWith =>
-      __$PackagePublisherCopyWithImpl<_PackagePublisher>(this, _$identity);
+  _$$_PackagePublisherCopyWith<_$_PackagePublisher> get copyWith =>
+      __$$_PackagePublisherCopyWithImpl<_$_PackagePublisher>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -151,16 +134,16 @@ class _$_PackagePublisher implements _PackagePublisher {
 }
 
 abstract class _PackagePublisher implements PackagePublisher {
-  factory _PackagePublisher({required String? publisherId}) =
+  factory _PackagePublisher({required final String? publisherId}) =
       _$_PackagePublisher;
 
   factory _PackagePublisher.fromJson(Map<String, dynamic> json) =
       _$_PackagePublisher.fromJson;
 
   @override
-  String? get publisherId;
+  String? get publisherId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PackagePublisherCopyWith<_PackagePublisher> get copyWith =>
+  _$$_PackagePublisherCopyWith<_$_PackagePublisher> get copyWith =>
       throw _privateConstructorUsedError;
 }

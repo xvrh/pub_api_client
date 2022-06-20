@@ -12,31 +12,11 @@ part of 'package_metrics_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PackageMetrics _$PackageMetricsFromJson(Map<String, dynamic> json) {
   return _PackageMetrics.fromJson(json);
 }
-
-/// @nodoc
-class _$PackageMetricsTearOff {
-  const _$PackageMetricsTearOff();
-
-  _PackageMetrics call(
-      {required PackageScore score, required PackageScoreCard scorecard}) {
-    return _PackageMetrics(
-      score: score,
-      scorecard: scorecard,
-    );
-  }
-
-  PackageMetrics fromJson(Map<String, Object?> json) {
-    return PackageMetrics.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PackageMetrics = _$PackageMetricsTearOff();
 
 /// @nodoc
 mixin _$PackageMetrics {
@@ -102,11 +82,11 @@ class _$PackageMetricsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PackageMetricsCopyWith<$Res>
+abstract class _$$_PackageMetricsCopyWith<$Res>
     implements $PackageMetricsCopyWith<$Res> {
-  factory _$PackageMetricsCopyWith(
-          _PackageMetrics value, $Res Function(_PackageMetrics) then) =
-      __$PackageMetricsCopyWithImpl<$Res>;
+  factory _$$_PackageMetricsCopyWith(
+          _$_PackageMetrics value, $Res Function(_$_PackageMetrics) then) =
+      __$$_PackageMetricsCopyWithImpl<$Res>;
   @override
   $Res call({PackageScore score, PackageScoreCard scorecard});
 
@@ -117,22 +97,22 @@ abstract class _$PackageMetricsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PackageMetricsCopyWithImpl<$Res>
+class __$$_PackageMetricsCopyWithImpl<$Res>
     extends _$PackageMetricsCopyWithImpl<$Res>
-    implements _$PackageMetricsCopyWith<$Res> {
-  __$PackageMetricsCopyWithImpl(
-      _PackageMetrics _value, $Res Function(_PackageMetrics) _then)
-      : super(_value, (v) => _then(v as _PackageMetrics));
+    implements _$$_PackageMetricsCopyWith<$Res> {
+  __$$_PackageMetricsCopyWithImpl(
+      _$_PackageMetrics _value, $Res Function(_$_PackageMetrics) _then)
+      : super(_value, (v) => _then(v as _$_PackageMetrics));
 
   @override
-  _PackageMetrics get _value => super._value as _PackageMetrics;
+  _$_PackageMetrics get _value => super._value as _$_PackageMetrics;
 
   @override
   $Res call({
     Object? score = freezed,
     Object? scorecard = freezed,
   }) {
-    return _then(_PackageMetrics(
+    return _then(_$_PackageMetrics(
       score: score == freezed
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
@@ -167,11 +147,12 @@ class _$_PackageMetrics implements _PackageMetrics {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackageMetrics &&
+            other is _$_PackageMetrics &&
             const DeepCollectionEquality().equals(other.score, score) &&
             const DeepCollectionEquality().equals(other.scorecard, scorecard));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -180,8 +161,8 @@ class _$_PackageMetrics implements _PackageMetrics {
 
   @JsonKey(ignore: true)
   @override
-  _$PackageMetricsCopyWith<_PackageMetrics> get copyWith =>
-      __$PackageMetricsCopyWithImpl<_PackageMetrics>(this, _$identity);
+  _$$_PackageMetricsCopyWith<_$_PackageMetrics> get copyWith =>
+      __$$_PackageMetricsCopyWithImpl<_$_PackageMetrics>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -191,18 +172,18 @@ class _$_PackageMetrics implements _PackageMetrics {
 
 abstract class _PackageMetrics implements PackageMetrics {
   factory _PackageMetrics(
-      {required PackageScore score,
-      required PackageScoreCard scorecard}) = _$_PackageMetrics;
+      {required final PackageScore score,
+      required final PackageScoreCard scorecard}) = _$_PackageMetrics;
 
   factory _PackageMetrics.fromJson(Map<String, dynamic> json) =
       _$_PackageMetrics.fromJson;
 
   @override
-  PackageScore get score;
+  PackageScore get score => throw _privateConstructorUsedError;
   @override
-  PackageScoreCard get scorecard;
+  PackageScoreCard get scorecard => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PackageMetricsCopyWith<_PackageMetrics> get copyWith =>
+  _$$_PackageMetricsCopyWith<_$_PackageMetrics> get copyWith =>
       throw _privateConstructorUsedError;
 }

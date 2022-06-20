@@ -12,34 +12,11 @@ part of 'pub_package_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PubPackage _$PubPackageFromJson(Map<String, dynamic> json) {
   return _PubPackage.fromJson(json);
 }
-
-/// @nodoc
-class _$PubPackageTearOff {
-  const _$PubPackageTearOff();
-
-  _PubPackage call(
-      {required String name,
-      required PackageVersion latest,
-      List<PackageVersion> versions = const []}) {
-    return _PubPackage(
-      name: name,
-      latest: latest,
-      versions: versions,
-    );
-  }
-
-  PubPackage fromJson(Map<String, Object?> json) {
-    return PubPackage.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PubPackage = _$PubPackageTearOff();
 
 /// @nodoc
 mixin _$PubPackage {
@@ -103,10 +80,11 @@ class _$PubPackageCopyWithImpl<$Res> implements $PubPackageCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$PubPackageCopyWith<$Res> implements $PubPackageCopyWith<$Res> {
-  factory _$PubPackageCopyWith(
-          _PubPackage value, $Res Function(_PubPackage) then) =
-      __$PubPackageCopyWithImpl<$Res>;
+abstract class _$$_PubPackageCopyWith<$Res>
+    implements $PubPackageCopyWith<$Res> {
+  factory _$$_PubPackageCopyWith(
+          _$_PubPackage value, $Res Function(_$_PubPackage) then) =
+      __$$_PubPackageCopyWithImpl<$Res>;
   @override
   $Res call(
       {String name, PackageVersion latest, List<PackageVersion> versions});
@@ -116,14 +94,14 @@ abstract class _$PubPackageCopyWith<$Res> implements $PubPackageCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$PubPackageCopyWithImpl<$Res> extends _$PubPackageCopyWithImpl<$Res>
-    implements _$PubPackageCopyWith<$Res> {
-  __$PubPackageCopyWithImpl(
-      _PubPackage _value, $Res Function(_PubPackage) _then)
-      : super(_value, (v) => _then(v as _PubPackage));
+class __$$_PubPackageCopyWithImpl<$Res> extends _$PubPackageCopyWithImpl<$Res>
+    implements _$$_PubPackageCopyWith<$Res> {
+  __$$_PubPackageCopyWithImpl(
+      _$_PubPackage _value, $Res Function(_$_PubPackage) _then)
+      : super(_value, (v) => _then(v as _$_PubPackage));
 
   @override
-  _PubPackage get _value => super._value as _PubPackage;
+  _$_PubPackage get _value => super._value as _$_PubPackage;
 
   @override
   $Res call({
@@ -131,7 +109,7 @@ class __$PubPackageCopyWithImpl<$Res> extends _$PubPackageCopyWithImpl<$Res>
     Object? latest = freezed,
     Object? versions = freezed,
   }) {
-    return _then(_PubPackage(
+    return _then(_$_PubPackage(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -141,7 +119,7 @@ class __$PubPackageCopyWithImpl<$Res> extends _$PubPackageCopyWithImpl<$Res>
           : latest // ignore: cast_nullable_to_non_nullable
               as PackageVersion,
       versions: versions == freezed
-          ? _value.versions
+          ? _value._versions
           : versions // ignore: cast_nullable_to_non_nullable
               as List<PackageVersion>,
     ));
@@ -152,8 +130,11 @@ class __$PubPackageCopyWithImpl<$Res> extends _$PubPackageCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PubPackage extends _PubPackage {
   _$_PubPackage(
-      {required this.name, required this.latest, this.versions = const []})
-      : super._();
+      {required this.name,
+      required this.latest,
+      final List<PackageVersion> versions = const []})
+      : _versions = versions,
+        super._();
 
   factory _$_PubPackage.fromJson(Map<String, dynamic> json) =>
       _$$_PubPackageFromJson(json);
@@ -162,9 +143,13 @@ class _$_PubPackage extends _PubPackage {
   final String name;
   @override
   final PackageVersion latest;
-  @JsonKey()
+  final List<PackageVersion> _versions;
   @override
-  final List<PackageVersion> versions;
+  @JsonKey()
+  List<PackageVersion> get versions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_versions);
+  }
 
   @override
   String toString() {
@@ -175,23 +160,24 @@ class _$_PubPackage extends _PubPackage {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PubPackage &&
+            other is _$_PubPackage &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.latest, latest) &&
-            const DeepCollectionEquality().equals(other.versions, versions));
+            const DeepCollectionEquality().equals(other._versions, _versions));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(latest),
-      const DeepCollectionEquality().hash(versions));
+      const DeepCollectionEquality().hash(_versions));
 
   @JsonKey(ignore: true)
   @override
-  _$PubPackageCopyWith<_PubPackage> get copyWith =>
-      __$PubPackageCopyWithImpl<_PubPackage>(this, _$identity);
+  _$$_PubPackageCopyWith<_$_PubPackage> get copyWith =>
+      __$$_PubPackageCopyWithImpl<_$_PubPackage>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -201,54 +187,29 @@ class _$_PubPackage extends _PubPackage {
 
 abstract class _PubPackage extends PubPackage {
   factory _PubPackage(
-      {required String name,
-      required PackageVersion latest,
-      List<PackageVersion> versions}) = _$_PubPackage;
+      {required final String name,
+      required final PackageVersion latest,
+      final List<PackageVersion> versions}) = _$_PubPackage;
   _PubPackage._() : super._();
 
   factory _PubPackage.fromJson(Map<String, dynamic> json) =
       _$_PubPackage.fromJson;
 
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  PackageVersion get latest;
+  PackageVersion get latest => throw _privateConstructorUsedError;
   @override
-  List<PackageVersion> get versions;
+  List<PackageVersion> get versions => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PubPackageCopyWith<_PubPackage> get copyWith =>
+  _$$_PubPackageCopyWith<_$_PubPackage> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 PackageVersion _$PackageVersionFromJson(Map<String, dynamic> json) {
   return _PackageVersion.fromJson(json);
 }
-
-/// @nodoc
-class _$PackageVersionTearOff {
-  const _$PackageVersionTearOff();
-
-  _PackageVersion call(
-      {required String version,
-      required Pubspec pubspec,
-      required String archiveUrl,
-      required DateTime published}) {
-    return _PackageVersion(
-      version: version,
-      pubspec: pubspec,
-      archiveUrl: archiveUrl,
-      published: published,
-    );
-  }
-
-  PackageVersion fromJson(Map<String, Object?> json) {
-    return PackageVersion.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PackageVersion = _$PackageVersionTearOff();
 
 /// @nodoc
 mixin _$PackageVersion {
@@ -310,26 +271,26 @@ class _$PackageVersionCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PackageVersionCopyWith<$Res>
+abstract class _$$_PackageVersionCopyWith<$Res>
     implements $PackageVersionCopyWith<$Res> {
-  factory _$PackageVersionCopyWith(
-          _PackageVersion value, $Res Function(_PackageVersion) then) =
-      __$PackageVersionCopyWithImpl<$Res>;
+  factory _$$_PackageVersionCopyWith(
+          _$_PackageVersion value, $Res Function(_$_PackageVersion) then) =
+      __$$_PackageVersionCopyWithImpl<$Res>;
   @override
   $Res call(
       {String version, Pubspec pubspec, String archiveUrl, DateTime published});
 }
 
 /// @nodoc
-class __$PackageVersionCopyWithImpl<$Res>
+class __$$_PackageVersionCopyWithImpl<$Res>
     extends _$PackageVersionCopyWithImpl<$Res>
-    implements _$PackageVersionCopyWith<$Res> {
-  __$PackageVersionCopyWithImpl(
-      _PackageVersion _value, $Res Function(_PackageVersion) _then)
-      : super(_value, (v) => _then(v as _PackageVersion));
+    implements _$$_PackageVersionCopyWith<$Res> {
+  __$$_PackageVersionCopyWithImpl(
+      _$_PackageVersion _value, $Res Function(_$_PackageVersion) _then)
+      : super(_value, (v) => _then(v as _$_PackageVersion));
 
   @override
-  _PackageVersion get _value => super._value as _PackageVersion;
+  _$_PackageVersion get _value => super._value as _$_PackageVersion;
 
   @override
   $Res call({
@@ -338,7 +299,7 @@ class __$PackageVersionCopyWithImpl<$Res>
     Object? archiveUrl = freezed,
     Object? published = freezed,
   }) {
-    return _then(_PackageVersion(
+    return _then(_$_PackageVersion(
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
@@ -390,7 +351,7 @@ class _$_PackageVersion implements _PackageVersion {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackageVersion &&
+            other is _$_PackageVersion &&
             const DeepCollectionEquality().equals(other.version, version) &&
             const DeepCollectionEquality().equals(other.pubspec, pubspec) &&
             const DeepCollectionEquality()
@@ -398,6 +359,7 @@ class _$_PackageVersion implements _PackageVersion {
             const DeepCollectionEquality().equals(other.published, published));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -408,8 +370,8 @@ class _$_PackageVersion implements _PackageVersion {
 
   @JsonKey(ignore: true)
   @override
-  _$PackageVersionCopyWith<_PackageVersion> get copyWith =>
-      __$PackageVersionCopyWithImpl<_PackageVersion>(this, _$identity);
+  _$$_PackageVersionCopyWith<_$_PackageVersion> get copyWith =>
+      __$$_PackageVersionCopyWithImpl<_$_PackageVersion>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -419,24 +381,24 @@ class _$_PackageVersion implements _PackageVersion {
 
 abstract class _PackageVersion implements PackageVersion {
   factory _PackageVersion(
-      {required String version,
-      required Pubspec pubspec,
-      required String archiveUrl,
-      required DateTime published}) = _$_PackageVersion;
+      {required final String version,
+      required final Pubspec pubspec,
+      required final String archiveUrl,
+      required final DateTime published}) = _$_PackageVersion;
 
   factory _PackageVersion.fromJson(Map<String, dynamic> json) =
       _$_PackageVersion.fromJson;
 
   @override
-  String get version;
+  String get version => throw _privateConstructorUsedError;
   @override
-  Pubspec get pubspec;
+  Pubspec get pubspec => throw _privateConstructorUsedError;
   @override
-  String get archiveUrl;
+  String get archiveUrl => throw _privateConstructorUsedError;
   @override
-  DateTime get published;
+  DateTime get published => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PackageVersionCopyWith<_PackageVersion> get copyWith =>
+  _$$_PackageVersionCopyWith<_$_PackageVersion> get copyWith =>
       throw _privateConstructorUsedError;
 }
