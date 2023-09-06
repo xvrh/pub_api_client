@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart';
-import 'package:pubspec/pubspec.dart';
+import 'package:pubspec_parse/pubspec_parse.dart';
 
 /// Package Model
 class PubPackage {
@@ -16,7 +16,7 @@ class PubPackage {
   String get description => latestPubspec.description ?? '';
   String get url => 'https://pub.dev/packages/$name';
   String get changelogUrl => '$url/changelog';
-  PubSpec get latestPubspec => latest.pubspec;
+  Pubspec get latestPubspec => latest.pubspec;
 
   Map<String, dynamic> toMap() => {
         'name': name,
@@ -60,7 +60,7 @@ class PubPackage {
 /// Package Version Model
 class PackageVersion {
   final String version;
-  final PubSpec pubspec;
+  final Pubspec pubspec;
   final String archiveUrl;
   final DateTime published;
   const PackageVersion({
@@ -72,7 +72,7 @@ class PackageVersion {
 
   Map<String, dynamic> toMap() => {
         'version': version,
-        'pubspec': pubspec.toJson(),
+        'pubspec': pubspec,
         'archiveUrl': archiveUrl,
         'published': published.millisecondsSinceEpoch,
       };
@@ -80,7 +80,7 @@ class PackageVersion {
   factory PackageVersion.fromMap(Map<String, dynamic> map) => PackageVersion(
         version: map['version'] as String? ?? '',
         pubspec:
-            PubSpec.fromJson(map['pubspec'] as Map<String, dynamic>? ?? {}),
+            Pubspec.fromJson(map['pubspec'] as Map<String, dynamic>? ?? {}),
         archiveUrl: map['archiveUrl'] as String? ?? '',
         published: DateTime.parse(map['published'] as String? ?? ''),
       );
